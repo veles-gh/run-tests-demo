@@ -1,17 +1,18 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-# from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.options import Options
 import pytest
 
 import time
 
 
 url = f"https://www.qa-practice.com/elements/button/simple"
-
+options = Options()
+options.add_argument('--headless')
 
 options = webdriver.ChromeOptions()
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(options=options)
 driver.maximize_window()
 
 
